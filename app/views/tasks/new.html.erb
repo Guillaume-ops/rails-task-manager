@@ -1,0 +1,18 @@
+<div class="border-bottom">
+  <div>
+  <%= form_with model: @task do |f| %>
+  <%= f.label :title  %>
+  </div>
+  <div>
+  <%= f.text_field :title  %>
+  <%= f.label :details  %>
+  </div>
+  <div>
+  <%= f.text_area :details  %>
+  <%= f.submit %>
+  </div>
+<% end %>
+</div>
+<div>
+<%= link_to "Back to list", tasks_path %>
+</div>

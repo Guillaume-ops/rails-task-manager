@@ -1,0 +1,12 @@
+<div>
+  <h1><%= @task.title %> </h1>
+</div>
+<div class="bg-light rounded border">
+  <h2 class="fs-6"> <%= @task.details %> </h2>
+</div>
+<div>
+<%= link_to "Edit this task", task_edit_path %>
+</div>
+<div>
+<%= link_to "Back to list", tasks_path %>
+</div>

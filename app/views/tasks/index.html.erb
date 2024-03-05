@@ -1,0 +1,18 @@
+<h1> My tasks </h1>
+
+<ul class="p-3 border-bottom">
+  <% @tasks.each do |task| %>
+    <li>
+      <% if task.completed %>
+      <i class="fa-regular fa-square-check"></i>
+      <% else %>
+        <i class="fa-regular fa-square"></i>
+      <% end %>
+      <%= link_to task.title, task_path(task) %><%= "." %>
+      <%= link_to "delete", task_path(task), data: { turbo_method: :delete, turbo_confirm: "Delete #{task.title}? " } %>
+      <i class="fa-regular fa-trash-can"></i>
+    </li>
+  <% end %>
+</ul>
+<i class="fa-solid fa-plus"></i>
+<%= link_to "Add a new task", tasks_new_path %>
